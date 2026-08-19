@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#49a9ff" />
+  <title>Blockverse Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="block-theme.css" />
+  <link rel="stylesheet" href="designer.css" />
+  <link rel="stylesheet" href="character.css" />
+  <link rel="stylesheet" href="human.css" />
+  <link rel="stylesheet" href="duel.css" />
+</head>
+<body>
+  <div class="clouds" aria-hidden="true"><i></i><i></i><i></i></div>
+  <header>
+    <a class="brand" href="#"><b>◆</b> BLOCKVERSE</a>
+    <nav><a href="#arcade">Discover</a><a href="#creator">Create</a><a href="#avatarLab">Avatar</a><a href="#vault">Rewards</a></nav>
+    <div class="status"><i></i> 1 PLAYER ONLINE</div>
+    <button class="sound" id="soundBtn" aria-label="Toggle sound">SOUND: ON</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">THE ULTIMATE MINI-GAME WORLD</p>
+      <h1>PLAY.<br><em>BUILD.</em> WIN.</h1>
+      <p class="intro">Jump into three blocky challenges, earn Power Cubes,<br>and unlock the legendary treasure.</p>
+      <button class="enter" id="enterBtn">PLAY NOW <span>▶</span></button></div>
+      <div class="block-scene" aria-hidden="true"><div class="sun"></div><div class="avatar player-avatar"><i class="hat"></i><i class="hair"></i><i class="neck"></i><i class="head"><b class="face"><u></u><u></u><em></em></b></i><i class="body"></i><i class="arm a1"><b></b></i><i class="arm a2"><b></b></i><i class="leg l1"><b></b></i><i class="leg l2"><b></b></i></div><div class="island"><i></i><i></i><i></i></div></div>
+    </section>
+
+    <section class="arcade" id="arcade">
+      <div class="section-head">
+        <div><p class="eyebrow">POPULAR IN BLOCKVERSE</p><h2>CHOOSE A GAME</h2></div>
+        <div class="core-meter"><span>POWER CUBES</span><b id="fragments">0 / 6</b><div><i id="meterFill"></i></div></div>
+      </div>
+
+      <div class="cabinet-grid">
+        <article class="cabinet pink" data-game="memory">
+          <div class="cabinet-top"><span>01</span><i class="fragment-dot"></i></div>
+          <div class="icon-grid">◆ ◆<br>◆ ◇</div>
+          <p class="genre">🧠 MEMORY · 91% 👍</p><h3>COLOR<br>CRAZE</h3>
+          <p>Copy the glowing block pattern and climb five levels.</p>
+          <button>PLAY <span>▶</span></button>
+        </article>
+        <article class="cabinet green" data-game="react">
+          <div class="cabinet-top"><span>02</span><i class="fragment-dot"></i></div>
+          <div class="radar"><i></i></div>
+          <p class="genre">⚡ REFLEX · 95% 👍</p><h3>QUICK<br>CLICK</h3>
+          <p>Tap the target when it turns green. Don't click too soon!</p>
+          <button>PLAY <span>▶</span></button>
+        </article>
+        <article class="cabinet yellow" data-game="dodge">
+          <div class="cabinet-top"><span>03</span><i class="fragment-dot"></i></div>
+          <div class="ship-icon">▲<br><span>╱ ╲</span></div>
+          <p class="genre">🚀 OBBY · 89% 👍</p><h3>BLOCK<br>ESCAPE</h3>
+          <p>Dodge the falling blocks and survive for twelve seconds.</p>
+          <button>PLAY <span>▶</span></button>
+        </article>
+        <article class="cabinet blue" data-game="coins">
+          <div class="cabinet-top"><span>04</span><i class="fragment-dot"></i></div>
+          <div class="game-art coin-art"><b>★</b><i></i><i></i><i></i></div>
+          <p class="genre">🪙 SPEED · 94% 👍</p><h3>COIN<br>RUSH</h3><p>Grab ten coins before the timer runs out.</p>
+          <button>PLAY <span>▶</span></button>
+        </article>
+        <article class="cabinet purple" data-game="math">
+          <div class="cabinet-top"><span>05</span><i class="fragment-dot"></i></div>
+          <div class="game-art math-art"><b>7</b><span>+</span><b>8</b></div>
+          <p class="genre">🧩 PUZZLE · 90% 👍</p><h3>MATH<br>MAYHEM</h3><p>Solve five quick number puzzles without a mistake.</p>
+          <button>PLAY <span>▶</span></button>
+        </article>
+        <article class="cabinet orange" data-game="target">
+          <div class="cabinet-top"><span>06</span><i class="fragment-dot"></i></div>
+          <div class="game-art target-art"><b>◎</b></div>
+          <p class="genre">🌙 EARN MOON GEMS</p><h3>TARGET<br>SMASH</h3><p>Hit eight moving targets and earn 3 Moon Gems.</p>
+          <button>PLAY <span>▶</span></button>
+        </article>
+      </div>
+      <div class="community-head"><p class="eyebrow">MADE BY PLAYERS</p><h2>COMMUNITY GAMES</h2></div>
+      <div class="cabinet-grid community-grid" id="communityGames"></div>
+      <section class="duel-arena" id="duels">
+        <div class="duel-copy"><p class="eyebrow">POWER CUBE EVENT</p><h2>DUEL<br>ARENA</h2><p>Use your collected Power Cubes to challenge a Blockverse bot. Every cube adds one bonus heart.</p><div class="duel-rules"><span>⚔️ ATTACK BEATS CHARGE</span><span>🛡️ GUARD BLOCKS ATTACK</span><span>⚡ CHARGE BREAKS GUARD</span></div><button class="enter duel-enter" id="duelBtn">EARN A POWER CUBE TO UNLOCK</button></div>
+        <div class="duel-visual"><div class="fighter player-fighter">YOU</div><b>VS</b><div class="fighter bot-fighter">BOT</div><div class="cube-orbit">◆</div></div>
+      </section>
+    </section>
+
+    <section class="studio" id="creator">
+      <div class="studio-copy"><p class="eyebrow">BLOCKVERSE STUDIO</p><h2>MAKE YOUR<br>OWN GAME</h2><p>Create a challenge and publish it straight into the community arcade.</p></div>
+      <form class="creator-form" id="creatorForm">
+        <label>GAME NAME<input id="createdName" maxlength="24" placeholder="My Awesome Game" required></label>
+        <label>GAME TYPE<select id="createdType"><option value="click">Speed Clicker</option><option value="guess">Number Quest</option><option value="collect">Gem Collector</option></select></label>
+        <label>WORLD COLOR<span class="color-row"><input type="color" id="createdColor" value="#745cff"><i id="colorPreview"></i></span></label>
+        <button class="publish" type="submit">PUBLISH GAME <span>＋</span></button>
+        <p class="form-note" id="creatorNote">Your games are saved on this device.</p>
+      </form>
+    </section>
+
+    <section class="avatar-lab" id="avatarLab">
+      <div class="fitting-room"><div class="room-label">FITTING ROOM</div><div class="avatar-preview"><div class="avatar player-avatar"><i class="hat"></i><i class="hair"></i><i class="neck"></i><i class="head"><b class="face"><u></u><u></u><em></em></b></i><i class="body"></i><i class="arm a1"><b></b></i><i class="arm a2"><b></b></i><i class="leg l1"><b></b></i><i class="leg l2"><b></b></i></div></div><button class="publish" id="randomAvatar">RANDOM OUTFIT</button></div>
+      <div class="avatar-controls"><div class="shop-title"><div><p class="eyebrow">BLOCKVERSE MARKET</p><h2>AVATAR SHOP</h2></div><div class="coin-balance" title="Win Target Smash to earn more">🌙 <b id="coinBalance">0</b> <small>MOON GEMS</small></div></div>
+      <div class="shop-tabs"><button class="active">FEATURED</button><button>ACCESSORIES</button><button>CLOTHING</button></div>
+      <div class="shop-grid" id="shopGrid">
+        <article class="shop-item" data-item="cap" data-price="2"><div class="item-pic red">🧢</div><h4>Builder Cap</h4><p>ACCESSORY</p><button>🌙 2</button></article>
+        <article class="shop-item" data-item="crown" data-price="5"><div class="item-pic gold">♛</div><h4>Golden Crown</h4><p>ACCESSORY</p><button>🌙 5</button></article>
+        <article class="shop-item" data-item="ninja" data-price="3"><div class="item-pic dark">🥷</div><h4>Ninja Shirt</h4><p>CLOTHING</p><button>🌙 3</button></article>
+        <article class="shop-item" data-item="royal" data-price="4"><div class="item-pic purple-shop">◆</div><h4>Royal Hoodie</h4><p>CLOTHING</p><button>🌙 4</button></article>
+        <article class="shop-item" data-item="forest" data-price="2"><div class="item-pic green-shop">🌲</div><h4>Forest Tee</h4><p>CLOTHING</p><button>🌙 2</button></article>
+        <article class="shop-item owned" data-item="classic" data-price="0"><div class="item-pic blue-shop">★</div><h4>Classic Blue</h4><p>OWNED</p><button>EQUIP</button></article>
+      </div>
+      <p class="closet-title">COLOR CLOSET</p><div class="custom-grid">
+        <label>SKIN<input type="color" id="skinColor" value="#ffd13c"></label>
+        <label>SHIRT<input type="color" id="shirtColor" value="#297ee5"></label>
+        <label>PANTS<input type="color" id="pantsColor" value="#2e3741"></label>
+      </div><p class="closet-title">CHOOSE A FACE</p><div class="face-picker" id="facePicker">
+        <button data-face="happy"><span>●‿●</span>HAPPY</button><button data-face="cool"><span>▰‿▰</span>COOL</button><button data-face="silly"><span>◕ڡ◕</span>SILLY</button><button data-face="brave"><span>•⌣•</span>BRAVE</button><button data-face="surprised"><span>●○●</span>WOW</button>
+      </div><p class="form-note" id="shopNote">Buy an item, then equip it. Everything saves automatically.</p>
+      <div class="clothes-maker">
+        <div class="maker-heading"><div><p class="eyebrow">CREATOR TOOL</p><h3>DESIGN CLOTHES</h3></div><span>✂️</span></div>
+        <form id="clothesForm"><label>DESIGN NAME<input id="clothesName" maxlength="18" placeholder="Galaxy Hoodie" required></label><div class="maker-options">
+          <label>MAIN COLOR<input type="color" id="clothMain" value="#ff477e"></label>
+          <label>SECOND COLOR<input type="color" id="clothSecond" value="#6c4cff"></label>
+          <label>PATTERN<select id="clothPattern"><option value="split">Split</option><option value="stripes">Stripes</option><option value="checker">Checker</option><option value="solid">Solid</option></select></label>
+        </div><button class="publish" type="submit">SAVE DESIGN ＋</button></form>
+        <p class="closet-title">MY DESIGNS</p><div class="design-grid" id="myDesigns"></div>
+      </div></div>
+    </section>
+
+    <section class="vault" id="vault">
+      <p class="eyebrow">LEGENDARY REWARD</p>
+      <div class="lock" id="lock">×</div>
+      <h2 id="vaultTitle">TREASURE LOCKED</h2>
+      <p id="vaultText">Win every game to open the legendary Blockverse chest.</p>
+      <button id="resetBtn">RESET ALL PROGRESS</button>
+    </section>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="game-shell">
+      <div class="game-bar"><span id="gameNumber">MACHINE 01</span><button id="closeBtn">ESC / CLOSE</button></div>
+      <div id="gameStage"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast">CORE FRAGMENT ACQUIRED</div>
+  <script src="app.js"></script>
+</body>
+</html>
