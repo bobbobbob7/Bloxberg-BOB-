@@ -14,13 +14,29 @@
   <link rel="stylesheet" href="character.css" />
   <link rel="stylesheet" href="human.css" />
   <link rel="stylesheet" href="duel.css" />
+  <link rel="stylesheet" href="hair.css" />
+  <link rel="stylesheet" href="social.css" />
+  <link rel="stylesheet" href="profile.css" />
+  <link rel="stylesheet" href="anime-games.css" />
+  <link rel="stylesheet" href="rhythm.css" />
+  <link rel="stylesheet" href="expansion.css" />
+  <link rel="stylesheet" href="market-survival.css" />
+  <link rel="stylesheet" href="treasure-store.css" />
+  <link rel="stylesheet" href="upgrades.css" />
+  <link rel="stylesheet" href="inventory-expansion.css" />
+  <link rel="stylesheet" href="forest-shop.css" />
+  <link rel="stylesheet" href="outfit-fix.css" />
+  <link rel="stylesheet" href="builder-obby.css" />
+  <link rel="stylesheet" href="backpack-actions.css" />
+  <link rel="stylesheet" href="ultra-3d.css" />
 </head>
 <body>
+  <div class="username-gate" id="usernameGate"><form id="usernameForm"><div class="gate-logo">◆</div><p>WELCOME TO BLOCKVERSE</p><h1>CHOOSE YOUR<br>USERNAME</h1><input id="usernameInput" minlength="3" maxlength="16" pattern="[A-Za-z0-9_]+" placeholder="Username" autocomplete="off" required><small>3–16 letters, numbers, or underscores</small><button type="submit">ENTER BLOCKVERSE ▶</button></form></div>
   <div class="clouds" aria-hidden="true"><i></i><i></i><i></i></div>
   <header>
     <a class="brand" href="#"><b>◆</b> BLOCKVERSE</a>
-    <nav><a href="#arcade">Discover</a><a href="#creator">Create</a><a href="#avatarLab">Avatar</a><a href="#vault">Rewards</a></nav>
-    <div class="status"><i></i> 1 PLAYER ONLINE</div>
+    <nav><a href="#arcade">Discover</a><a href="#creator">Create</a><a href="#friends">Friends</a><a href="#avatarLab">Avatar</a><a href="#backpack">Backpack</a><a href="#marketplace">Market</a><a href="#upgrades">Upgrades</a><a href="#vault">Rewards</a></nav>
+    <div class="status"><i></i> <span id="headerUsername">PLAYER</span> ONLINE</div>
     <button class="sound" id="soundBtn" aria-label="Toggle sound">SOUND: ON</button>
   </header>
 
@@ -79,6 +95,29 @@
           <p class="genre">🌙 EARN MOON GEMS</p><h3>TARGET<br>SMASH</h3><p>Hit eight moving targets and earn 3 Moon Gems.</p>
           <button>PLAY <span>▶</span></button>
         </article>
+        <article class="cabinet aqua" data-game="obby2">
+          <div class="cabinet-top"><span>07</span><i class="duo-dot">2P</i></div><div class="game-art duo-art"><b>👧</b><b>🧑</b></div>
+          <p class="genre">👥 LOCAL 2 PLAYER</p><h3>DUO<br>OBBY</h3><p>Team up on one keyboard and reach the finish together.</p><button>PLAY <span>▶</span></button>
+        </article>
+        <article class="cabinet rose" data-game="stars"><div class="cabinet-top"><span>08</span><i class="duo-dot">NEW</i></div><div class="game-art stars-art">★ ✦ ★</div><p class="genre">🌠 ARCADE · NEW</p><h3>STAR<br>CATCHER</h3><p>Catch falling stars and avoid the dark comets.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet lavender" data-game="emoji"><div class="cabinet-top"><span>09</span><i class="duo-dot">NEW</i></div><div class="game-art emoji-art">🍓 🌸<br>🌸 🍓</div><p class="genre">🎴 MATCH · NEW</p><h3>KAWAII<br>PAIRS</h3><p>Flip cards and match every adorable pair.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet midnight" data-game="rhythm"><div class="cabinet-top"><span>10</span><i class="duo-dot">NEW</i></div><div class="game-art rhythm-art">♪ ♫ ♪</div><p class="genre">🎵 RHYTHM · NEW</p><h3>BEAT<br>POP</h3><p>Tap the glowing notes and complete the song.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet disco" id="danceCard"><div class="cabinet-top"><span>11</span><i class="duo-dot">4 ◆</i></div><div class="game-art dance-art"><b>🪩</b><span>💃 🕺</span></div><p class="genre">🪩 POWER CUBE PARTY</p><h3>DANCE<br>PARTY</h3><p>Beat four dance mini-games to win 100 Moon Gems.</p><button id="danceBtn" disabled>EARN 4 POWER CUBES</button></article>
+        <article class="cabinet survival" data-game="survival"><div class="cabinet-top"><span>12</span><i class="duo-dot">NEW</i></div><div class="game-art survival-art"><b>🏃</b><span>👾 👾</span></div><p class="genre">❤️ SURVIVAL · WAVES</p><h3>NIGHT<br>ESCAPE</h3><p>Run from shadow creatures and survive every wave.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet forest" data-game="forest"><div class="cabinet-top"><span>13</span><i class="duo-dot">NEW</i></div><div class="game-art forest-art"><b>🌲</b><span>🔥❤️🌙</span></div><p class="genre">🏕️ FOREST SURVIVAL</p><h3>FOREST<br>NIGHTS</h3><p>Fight creatures, protect the fire, and search for hidden hearts.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet squishy" data-game="squishy"><div class="cabinet-top"><span>14</span><i class="duo-dot">NEW</i></div><div class="game-art squishy-art"><b>🐰</b><b>🦄</b></div><p class="genre">🧸 COLLECT · TRADE</p><h3>SQUISHY<br>SWAP</h3><p>Open capsules and trade squishies for rare friends.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet sky" data-game="soloobby"><div class="cabinet-top"><span>15</span><i class="duo-dot">NEW</i></div><div class="game-art solo-obby-art"><b>🏃‍♀️</b><span>▰ ▰ ▰</span></div><p class="genre">🏁 SOLO OBBY</p><h3>SKY<br>CLIMB</h3><p>Dodge hazards and reach the floating finish platform.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet builder" data-game="builder"><div class="cabinet-top"><span>16</span><i class="duo-dot">NEW</i></div><div class="game-art builder-art"><b>🧱</b><span>🏠</span></div><p class="genre">🔨 BUILD · SANDBOX</p><h3>BLOCK<br>BUILDER</h3><p>Place colorful blocks, save a blueprint, and finish a build.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet bonus-game" data-game="moondash"><div class="cabinet-top"><span>17</span><i class="duo-dot">NEW</i></div><div class="game-art">🌙 🚀 ✨</div><p class="genre">🚀 SPEED</p><h3>MOON<br>DASH</h3><p>Catch the speeding moons before time runs out.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet bonus-game" data-game="petrescue"><div class="cabinet-top"><span>18</span><i class="duo-dot">NEW</i></div><div class="game-art">🐶 💗 🐱</div><p class="genre">🐾 RESCUE</p><h3>PET<br>RESCUE</h3><p>Find the correct pet in every rescue round.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet bonus-game" data-game="pizzapop"><div class="cabinet-top"><span>19</span><i class="duo-dot">NEW</i></div><div class="game-art">🍕 🍅 🧀</div><p class="genre">🍕 KITCHEN</p><h3>PIZZA<br>PANIC</h3><p>Grab pizza slices in a fast kitchen challenge.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet bonus-game" data-game="bubblepop"><div class="cabinet-top"><span>20</span><i class="duo-dot">NEW</i></div><div class="game-art">🫧 🫧 🫧</div><p class="genre">🫧 POP</p><h3>BUBBLE<br>BURST</h3><p>Pop magical bubbles as they bounce around.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet bonus-game" data-game="gemhunt"><div class="cabinet-top"><span>21</span><i class="duo-dot">NEW</i></div><div class="game-art">💎 🔦 💎</div><p class="genre">💎 TREASURE</p><h3>GEM<br>HUNT</h3><p>Spot the requested gem among the decoys.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet bonus-game" data-game="fashionrun"><div class="cabinet-top"><span>22</span><i class="duo-dot">NEW</i></div><div class="game-art">👗 ✨ 👠</div><p class="genre">👗 STYLE</p><h3>FASHION<br>RUN</h3><p>Choose the right outfit pieces for the runway.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet bonus-game" data-game="fishing"><div class="cabinet-top"><span>23</span><i class="duo-dot">NEW</i></div><div class="game-art">🎣 🐟 🌊</div><p class="genre">🐟 TIMING</p><h3>STAR<br>FISHING</h3><p>Catch colorful fish swimming through the lake.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet bonus-game" data-game="snowball"><div class="cabinet-top"><span>24</span><i class="duo-dot">NEW</i></div><div class="game-art">❄️ ⛄ ❄️</div><p class="genre">❄️ ACTION</p><h3>SNOWBALL<br>BLAST</h3><p>Hit the snowmen in a frosty target challenge.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet bonus-game" data-game="cakestack"><div class="cabinet-top"><span>25</span><i class="duo-dot">NEW</i></div><div class="game-art">🍰 🧁 🎂</div><p class="genre">🎂 BAKERY</p><h3>CAKE<br>STACK</h3><p>Pick the requested treats to build a giant cake.</p><button>PLAY <span>▶</span></button></article>
+        <article class="cabinet bonus-game" data-game="spaceminer"><div class="cabinet-top"><span>26</span><i class="duo-dot">NEW</i></div><div class="game-art">🪐 ⛏️ ☄️</div><p class="genre">🪐 SPACE</p><h3>SPACE<br>MINER</h3><p>Mine valuable asteroids across the galaxy.</p><button>PLAY <span>▶</span></button></article>
       </div>
       <div class="community-head"><p class="eyebrow">MADE BY PLAYERS</p><h2>COMMUNITY GAMES</h2></div>
       <div class="cabinet-grid community-grid" id="communityGames"></div>
@@ -89,7 +128,7 @@
     </section>
 
     <section class="studio" id="creator">
-      <div class="studio-copy"><p class="eyebrow">BLOCKVERSE STUDIO</p><h2>MAKE YOUR<br>OWN GAME</h2><p>Create a challenge and publish it straight into the community arcade.</p></div>
+      <div class="studio-copy"><p class="eyebrow">BLOCKVERSE STUDIO · COST 🌙 2</p><h2>MAKE YOUR<br>OWN GAME</h2><p>Create a challenge and publish it straight into the community arcade.</p></div>
       <form class="creator-form" id="creatorForm">
         <label>GAME NAME<input id="createdName" maxlength="24" placeholder="My Awesome Game" required></label>
         <label>GAME TYPE<select id="createdType"><option value="click">Speed Clicker</option><option value="guess">Number Quest</option><option value="collect">Gem Collector</option></select></label>
@@ -98,6 +137,8 @@
         <p class="form-note" id="creatorNote">Your games are saved on this device.</p>
       </form>
     </section>
+
+    <section class="friends-zone" id="friends"><div class="friends-intro"><p class="eyebrow">SOCIAL</p><h2>PLAY WITH<br>FRIENDS</h2><p>Add players by username and build your Blockverse crew.</p><div class="friend-art">👧🏽 <span>＋</span> 🧑🏻 <span>＋</span> 👩🏾</div></div><div class="friends-panel"><h3>ADD A FRIEND</h3><form id="friendForm"><input id="friendName" maxlength="18" placeholder="Enter username" required><button type="submit">ADD</button></form><p id="friendNote">Friends are saved on this device.</p><h3>MY FRIENDS <b id="friendCount">0</b></h3><div id="friendList" class="friend-list"></div></div></section>
 
     <section class="avatar-lab" id="avatarLab">
       <div class="fitting-room"><div class="room-label">FITTING ROOM</div><div class="avatar-preview"><div class="avatar player-avatar"><i class="hat"></i><i class="hair"></i><i class="neck"></i><i class="head"><b class="face"><u></u><u></u><em></em></b></i><i class="body"></i><i class="arm a1"><b></b></i><i class="arm a2"><b></b></i><i class="leg l1"><b></b></i><i class="leg l2"><b></b></i></div></div><button class="publish" id="randomAvatar">RANDOM OUTFIT</button></div>
@@ -110,6 +151,9 @@
         <article class="shop-item" data-item="royal" data-price="4"><div class="item-pic purple-shop">◆</div><h4>Royal Hoodie</h4><p>CLOTHING</p><button>🌙 4</button></article>
         <article class="shop-item" data-item="forest" data-price="2"><div class="item-pic green-shop">🌲</div><h4>Forest Tee</h4><p>CLOTHING</p><button>🌙 2</button></article>
         <article class="shop-item owned" data-item="classic" data-price="0"><div class="item-pic blue-shop">★</div><h4>Classic Blue</h4><p>OWNED</p><button>EQUIP</button></article>
+        <article class="shop-item" data-item="dress" data-price="5"><div class="item-pic dress-shop">👗</div><h4>Starlight Dress</h4><p>CLOTHING</p><button>🌙 5</button></article>
+        <article class="shop-item" data-item="sweater" data-price="3"><div class="item-pic sweater-shop">🧶</div><h4>Cozy Sweater</h4><p>CLOTHING</p><button>🌙 3</button></article>
+        <article class="shop-item" data-item="jacket" data-price="4"><div class="item-pic jacket-shop">🧥</div><h4>Adventure Jacket</h4><p>CLOTHING</p><button>🌙 4</button></article>
       </div>
       <p class="closet-title">COLOR CLOSET</p><div class="custom-grid">
         <label>SKIN<input type="color" id="skinColor" value="#ffd13c"></label>
@@ -117,25 +161,49 @@
         <label>PANTS<input type="color" id="pantsColor" value="#2e3741"></label>
       </div><p class="closet-title">CHOOSE A FACE</p><div class="face-picker" id="facePicker">
         <button data-face="happy"><span>●‿●</span>HAPPY</button><button data-face="cool"><span>▰‿▰</span>COOL</button><button data-face="silly"><span>◕ڡ◕</span>SILLY</button><button data-face="brave"><span>•⌣•</span>BRAVE</button><button data-face="surprised"><span>●○●</span>WOW</button>
-      </div><p class="form-note" id="shopNote">Buy an item, then equip it. Everything saves automatically.</p>
+      </div><p class="closet-title">HAIR STYLE</p><div class="hair-picker" id="hairPicker">
+        <button data-hair="short"><span>👦</span>SHORT</button><button data-hair="long"><span>👩</span>LONG</button><button data-hair="ponytail"><span>👩‍🦰</span>PONYTAIL</button><button data-hair="bob"><span>👩🏻</span>BOB</button><button data-hair="wavy"><span>🌊</span>WAVY</button><button data-hair="twintails"><span>🎀</span>TWIN-TAILS</button><button data-hair="braid"><span>🌸</span>BRAID</button>
+      </div><p class="closet-title">BANGS</p><div class="bangs-picker"><button data-bangs="none">NONE</button><button data-bangs="straight">STRAIGHT</button><button data-bangs="side">SIDE</button><button data-bangs="curtain">CURTAIN</button></div><label class="hair-color">HAIR COLOR<input type="color" id="hairColor" value="#57351f"></label><p class="closet-title">MAKEUP</p><div class="makeup-picker">
+        <button data-makeup="none">NATURAL</button><button data-makeup="blush">🌸 BLUSH</button><button data-makeup="lipstick">💄 LIPS</button><button data-makeup="glam">✨ GLAM</button>
+      </div><p class="closet-title">PANTS STYLE</p><div class="pants-picker"><button data-pants="jeans">👖 JEANS</button><button data-pants="cargo">🩳 CARGO</button><button data-pants="shorts">SHORTS</button><button data-pants="skirt">SKIRT</button></div>
+      <div class="beauty-studio"><p class="eyebrow">CREATOR TOOL</p><h3>HAIR & FACE STUDIO</h3><p>Mix your own look and save it to your avatar.</p><div class="beauty-controls"><label>EYE COLOR<input type="color" id="eyeColor" value="#242424"></label><label>LIP COLOR<input type="color" id="lipColor" value="#c92d57"></label><label>HAIR SHINE<input type="range" id="hairShine" min="0" max="100" value="25"></label></div><button class="publish" id="saveBeauty">SAVE CUSTOM LOOK</button></div><p class="form-note" id="shopNote">Buy an item, then equip it. Everything saves automatically.</p>
       <div class="clothes-maker">
-        <div class="maker-heading"><div><p class="eyebrow">CREATOR TOOL</p><h3>DESIGN CLOTHES</h3></div><span>✂️</span></div>
+        <div class="maker-heading"><div><p class="eyebrow">CREATOR TOOL · COST 🌙 3</p><h3>DESIGN CLOTHES</h3></div><span>✂️</span></div>
         <form id="clothesForm"><label>DESIGN NAME<input id="clothesName" maxlength="18" placeholder="Galaxy Hoodie" required></label><div class="maker-options">
           <label>MAIN COLOR<input type="color" id="clothMain" value="#ff477e"></label>
           <label>SECOND COLOR<input type="color" id="clothSecond" value="#6c4cff"></label>
           <label>PATTERN<select id="clothPattern"><option value="split">Split</option><option value="stripes">Stripes</option><option value="checker">Checker</option><option value="solid">Solid</option></select></label>
         </div><button class="publish" type="submit">SAVE DESIGN ＋</button></form>
         <p class="closet-title">MY DESIGNS</p><div class="design-grid" id="myDesigns"></div>
-      </div></div>
+      </div><div class="pants-maker"><div class="maker-heading"><div><p class="eyebrow">CREATOR TOOL · 🌙 3</p><h3>DESIGN PANTS</h3></div><span>👖</span></div><form id="pantsForm"><label>DESIGN NAME<input id="pantsName" maxlength="18" placeholder="Star Jeans" required></label><div class="maker-options"><label>MAIN COLOR<input type="color" id="pantsMain" value="#4d63c8"></label><label>SECOND COLOR<input type="color" id="pantsSecond" value="#f2c94c"></label><label>PATTERN<select id="pantsPattern"><option value="split">Split</option><option value="stripes">Stripes</option><option value="checker">Checker</option><option value="solid">Solid</option></select></label></div><button class="publish" type="submit">CREATE · 🌙 3</button></form><p class="closet-title">MY PANTS</p><div class="design-grid" id="myPants"></div></div><div class="backpack-maker"><div class="maker-heading"><div><p class="eyebrow">BACKPACK STUDIO · 🌙 4</p><h3>DESIGN A BACKPACK</h3></div><span>🎒</span></div><div class="backpack-choices"><button data-bag="classic">🎒 CLASSIC</button><button data-bag="heart">💗 HEART</button><button data-bag="star">⭐ STAR</button></div><form id="backpackForm"><label>BACKPACK NAME<input id="backpackName" maxlength="18" placeholder="Dream Bag" required></label><div class="maker-options"><label>MAIN COLOR<input type="color" id="bagMain" value="#ff6fa5"></label><label>POCKET COLOR<input type="color" id="bagSecond" value="#855cff"></label></div><button class="publish" type="submit">CREATE BACKPACK · 🌙 4</button></form><div class="design-grid" id="myBackpacks"></div></div></div>
     </section>
 
+    <section class="backpack-zone" id="backpack"><div class="backpack-head"><div><p class="eyebrow">YOUR INVENTORY</p><h2>BACKPACK</h2><p>Currency, collectibles, and everything you create lives here.</p></div><div class="bag-currency"><span>◆ <b id="bagCubes">0</b> POWER CUBES</span><span>🌙 <b id="bagGems">0</b> MOON GEMS</span></div></div><div class="capacity"><span>STORAGE <b id="bagCapacityText">0 / 12</b></span><div><i id="bagCapacityFill"></i></div></div><div class="inventory-grid" id="inventoryGrid"></div></section>
+
+    <section class="marketplace" id="marketplace"><div class="market-head"><div><p class="eyebrow">PLAYER ECONOMY</p><h2>CREATOR<br>MARKETPLACE</h2><p>List your custom clothes for Moon Gems and discover designs made by other players.</p></div><form id="listingForm"><h3>SELL A DESIGN</h3><label>YOUR CLOTHING<select id="listingDesign" required><option value="">Choose a design</option></select></label><label>PRICE IN MOON GEMS<input id="listingPrice" type="number" min="1" max="999" value="5" required></label><button class="publish" type="submit">LIST FOR SALE ＋</button><p id="marketNote">Create clothing first, then list it here.</p></form></div><div class="market-toolbar"><h3>COMMUNITY LISTINGS <b id="listingCount">0</b></h3><div class="market-balance">🌙 <span id="marketBalance">0</span></div></div><div class="market-grid" id="marketGrid"></div></section>
+
+    <section class="premium-store" id="store"><div class="store-heading"><p class="eyebrow">PREMIUM STORE</p><h2>POWER-UP SHOP</h2><p>Secure checkout must be connected before purchases can be enabled.</p></div><div class="store-grid"><article><div class="pack-icon cube-pack">◆</div><h3>1 POWER CUBE</h3><p>Instant cube boost</p><b>$0.99</b><button data-product="cube1">CHECKOUT</button></article><article class="popular"><i>MOST POPULAR</i><div class="pack-icon cube-pack">◆ ◆ ◆</div><h3>3 POWER CUBES</h3><p>Triple cube pack</p><b>$1.99</b><button data-product="cube3">CHECKOUT</button></article><article><div class="pack-icon gem-pack">🌙</div><h3>50 MOON GEMS</h3><p>Spend in the marketplace</p><b>$1.99</b><button data-product="gems50">CHECKOUT</button></article><article><div class="pack-icon gem-pack">🌙 ✦</div><h3>150 MOON GEMS</h3><p>Best gem value</p><b>$3.99</b><button data-product="gems150">CHECKOUT</button></article></div><div class="checkout-notice" id="checkoutNotice">🔒 No card information is collected by this website. Add verified payment links in <code>app.js</code> to enable secure checkout.</div></section>
+
+    <section class="upgrade-lab" id="upgrades"><div class="upgrade-heading"><div><p class="eyebrow">MOON GEM UPGRADES</p><h2>GAME<br>UPGRADE LAB</h2><p>Spend Moon Gems on permanent boosts for your mini-games.</p></div><div class="upgrade-wallet">🌙 <b id="upgradeBalance">0</b><span>AVAILABLE</span></div></div><div class="upgrade-grid" id="upgradeGrid">
+      <article data-upgrade="hearts" data-base="3" data-max="3"><div>❤️</div><h3>Survival Hearts</h3><p>Start Night Escape with one extra heart per level.</p><span class="upgrade-level">LEVEL 0 / 3</span><button>UPGRADE · 🌙 3</button></article>
+      <article data-upgrade="speed" data-base="3" data-max="3"><div>👟</div><h3>Runner Shoes</h3><p>Move faster in Night Escape.</p><span class="upgrade-level">LEVEL 0 / 3</span><button>UPGRADE · 🌙 3</button></article>
+      <article data-upgrade="clock" data-base="4" data-max="3"><div>⏱️</div><h3>Coin Clock</h3><p>Add two seconds to Coin Rush per level.</p><span class="upgrade-level">LEVEL 0 / 3</span><button>UPGRADE · 🌙 4</button></article>
+      <article data-upgrade="target" data-base="4" data-max="3"><div>🎯</div><h3>Target Lens</h3><p>Make Target Smash targets larger.</p><span class="upgrade-level">LEVEL 0 / 3</span><button>UPGRADE · 🌙 4</button></article>
+      <article data-upgrade="memory" data-base="5" data-max="2"><div>🧠</div><h3>Memory Focus</h3><p>Keep memory patterns lit longer.</p><span class="upgrade-level">LEVEL 0 / 2</span><button>UPGRADE · 🌙 5</button></article>
+      <article data-upgrade="rewards" data-base="8" data-max="2"><div>🌙</div><h3>Gem Booster</h3><p>Earn one bonus Moon Gem from game rewards.</p><span class="upgrade-level">LEVEL 0 / 2</span><button>UPGRADE · 🌙 8</button></article>
+      <article data-upgrade="bagspace" data-base="5" data-max="5"><div>🎒</div><h3>Backpack Space</h3><p>Add six permanent inventory slots per level.</p><span class="upgrade-level">LEVEL 0 / 5</span><button>UPGRADE · 🌙 5</button></article>
+    </div><p class="upgrade-note" id="upgradeNote">Upgrades are permanent and save automatically.</p></section>
+
     <section class="vault" id="vault">
-      <p class="eyebrow">LEGENDARY REWARD</p>
-      <div class="lock" id="lock">×</div>
-      <h2 id="vaultTitle">TREASURE LOCKED</h2>
-      <p id="vaultText">Win every game to open the legendary Blockverse chest.</p>
+      <p class="eyebrow">6 POWER CUBE TREASURE</p>
+      <div class="treasure-chest" id="treasureChest"><i></i><b>◆</b></div>
+      <div class="lock" id="lock">×</div><h2 id="vaultTitle">TREASURE LOCKED</h2>
+      <p id="vaultText">Collect all 6 Power Cubes to purchase and open a random prize chest.</p>
+      <button class="open-chest" id="openChest" disabled>0 / 6 POWER CUBES</button>
+      <div class="reward-history" id="rewardHistory"></div>
       <button id="resetBtn">RESET ALL PROGRESS</button>
     </section>
+    <section class="sweater-maker sweater-section"><div class="maker-heading"><div><p class="eyebrow">SWEATER STUDIO · 🌙 3</p><h3>MAKE A SWEATER</h3></div><span>🧶</span></div><form id="sweaterForm"><label>SWEATER NAME<input id="sweaterName" maxlength="18" placeholder="Cloudy Knit" required></label><div class="maker-options"><label>YARN COLOR<input type="color" id="sweaterMain" value="#efb98f"></label><label>DETAIL COLOR<input type="color" id="sweaterSecond" value="#fff2d9"></label><label>PATTERN<select id="sweaterPattern"><option value="stripes">Knit Stripes</option><option value="checker">Checker Knit</option><option value="split">Two Tone</option><option value="solid">Solid</option></select></label></div><button class="publish" type="submit">CREATE SWEATER · 🌙 3</button></form><div class="design-grid" id="mySweaters"></div></section>
   </main>
 
   <div class="modal" id="modal" aria-hidden="true">
