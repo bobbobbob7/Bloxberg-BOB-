@@ -28,10 +28,10 @@
   <link rel="stylesheet" href="outfit-fix.css" />
   <link rel="stylesheet" href="builder-obby.css" />
   <link rel="stylesheet" href="backpack-actions.css" />
-  <link rel="stylesheet" href="ultra-3d.css" />
+  <link rel="stylesheet" href="ultra-3d.css?v=20260821-forever-run" />
 </head>
 <body>
-  <div class="username-gate" id="usernameGate"><form id="usernameForm"><div class="gate-logo">◆</div><p>WELCOME TO BLOCKVERSE</p><h1>CHOOSE YOUR<br>USERNAME</h1><input id="usernameInput" minlength="3" maxlength="16" pattern="[A-Za-z0-9_]+" placeholder="Username" autocomplete="off" required><small>3–16 letters, numbers, or underscores</small><button type="submit">ENTER BLOCKVERSE ▶</button></form></div>
+  <div class="username-gate" id="usernameGate"><form id="usernameForm" novalidate><div class="gate-logo">◆</div><p>WELCOME TO BLOCKVERSE</p><h1>CHOOSE YOUR<br>USERNAME</h1><input id="usernameInput" minlength="2" maxlength="20" placeholder="Type your name" autocomplete="off" autofocus><small id="usernameHelp">Use 2–20 letters, numbers, spaces, or underscores.</small><button type="submit" id="usernameEnter">ENTER BLOCKVERSE ▶</button><button type="button" class="guest-enter" id="guestEnter">CONTINUE AS PLAYER</button></form></div>
   <div class="clouds" aria-hidden="true"><i></i><i></i><i></i></div>
   <header>
     <a class="brand" href="#"><b>◆</b> BLOCKVERSE</a>
@@ -54,6 +54,7 @@
         <div><p class="eyebrow">POPULAR IN BLOCKVERSE</p><h2>CHOOSE A GAME</h2></div>
         <div class="core-meter"><span>POWER CUBES</span><b id="fragments">0 / 6</b><div><i id="meterFill"></i></div></div>
       </div>
+      <div class="recent-game" id="recentGame"><div><span>🕘</span><p><small>MOST RECENTLY PLAYED</small><b id="recentGameName">NO GAME YET</b></p></div><button id="recentGamePlay" disabled>PLAY AGAIN ▶</button></div>
 
       <div class="cabinet-grid" id="mainArcadeGrid">
         <article class="cabinet pink" data-game="memory">
@@ -119,7 +120,10 @@
         <article class="cabinet bonus-game" data-game="cakestack"><div class="cabinet-top"><span>25</span><i class="duo-dot">NEW</i></div><div class="game-art">🍰 🧁 🎂</div><p class="genre">🎂 BAKERY</p><h3>CAKE<br>STACK</h3><p>Pick the requested treats to build a giant cake.</p><button>PLAY <span>▶</span></button></article>
         <article class="cabinet bonus-game" data-game="spaceminer"><div class="cabinet-top"><span>26</span><i class="duo-dot">NEW</i></div><div class="game-art">🪐 ⛏️ ☄️</div><p class="genre">🪐 SPACE</p><h3>SPACE<br>MINER</h3><p>Mine valuable asteroids across the galaxy.</p><button>PLAY <span>▶</span></button></article>
         <article class="cabinet tycoon-card" data-game="tycoon"><div class="cabinet-top"><span>27</span><i class="duo-dot">NEW</i></div><div class="game-art">🏪 💵 🏭</div><p class="genre">💰 BUSINESS · TYCOON</p><h3>DREAM<br>TYCOON</h3><p>Start small, buy businesses, and build a money-making empire.</p><button>PLAY <span>▶</span></button></article>
-        <article class="cabinet bobo-card" data-bobo-game><div class="cabinet-top"><span>48</span><i class="duo-dot">NEW</i></div><div class="game-art">🐻 💤 🤫</div><p class="genre">🐻 SNEAK · COLLECT</p><h3>BOBO<br>HEIST</h3><p>Sneak toward sleeping Bobos, escape if they wake, and grow your collection.</p><button id="boboPlay">PLAY <span>▶</span></button></article>
+        <article class="cabinet bobo-card" data-bobo-game><div class="cabinet-top"><span>48</span><i class="duo-dot">∞</i></div><div class="game-art">🐻 🌈 ✨</div><p class="genre">🐻 ENDLESS · COLLECT</p><h3>BOBO<br>HEIST</h3><p>Collect unlimited Bobos, discover rare types, earn cash, and upgrade your base.</p><button id="boboPlay">PLAY <span>▶</span></button></article>
+        <article class="cabinet endless-card"><div class="cabinet-top"><span>49</span><i class="duo-dot">∞</i></div><div class="game-art">☁️ 🏃 ☁️</div><p class="genre">♾️ ENDLESS OBBY</p><h3>INFINITE<br>SKY OBBY</h3><p>Keep jumping forever as the platforms become faster and harder.</p><button id="endlessObbyPlay">PLAY <span>▶</span></button></article>
+        <article class="cabinet age-card"><div class="cabinet-top"><span>50</span><i class="duo-dot">NEW</i></div><div class="game-art">👶 🧑 👵</div><p class="genre">🎂 STORY OBBY</p><h3>AGE<br>OBBY</h3><p>Travel from baby years to age 100 through ten themed stages.</p><button id="ageObbyPlay">PLAY <span>▶</span></button></article>
+        <article class="cabinet runner-card"><div class="cabinet-top"><span>51</span><i class="duo-dot">∞</i></div><div class="game-art">🏃 💨 🚧</div><p class="genre">♾️ ENDLESS RUNNER</p><h3>FOREVER<br>RUN</h3><p>Run forward forever. Jump over barriers and duck under flying obstacles.</p><button id="foreverRunPlay">PLAY <span>▶</span></button></article>
       </div>
       <div class="community-head"><p class="eyebrow">MADE BY PLAYERS</p><h2>COMMUNITY GAMES</h2></div>
       <div class="cabinet-grid community-grid" id="communityGames"></div>
@@ -180,9 +184,10 @@
       </div><div class="pants-maker"><div class="maker-heading"><div><p class="eyebrow">CREATOR TOOL · 🌙 3</p><h3>DESIGN PANTS</h3></div><span>👖</span></div><form id="pantsForm"><label>DESIGN NAME<input id="pantsName" maxlength="18" placeholder="Star Jeans" required></label><div class="maker-options"><label>MAIN COLOR<input type="color" id="pantsMain" value="#4d63c8"></label><label>SECOND COLOR<input type="color" id="pantsSecond" value="#f2c94c"></label><label>PATTERN<select id="pantsPattern"><option value="split">Split</option><option value="stripes">Stripes</option><option value="checker">Checker</option><option value="solid">Solid</option></select></label></div><button class="publish" type="submit">CREATE · 🌙 3</button></form><p class="closet-title">MY PANTS</p><div class="design-grid" id="myPants"></div></div><div class="backpack-maker"><div class="maker-heading"><div><p class="eyebrow">BACKPACK STUDIO · 🌙 4</p><h3>DESIGN A BACKPACK</h3></div><span>🎒</span></div><div class="backpack-choices"><button data-bag="classic">🎒 CLASSIC</button><button data-bag="heart">💗 HEART</button><button data-bag="star">⭐ STAR</button></div><form id="backpackForm"><label>BACKPACK NAME<input id="backpackName" maxlength="18" placeholder="Dream Bag" required></label><div class="maker-options"><label>MAIN COLOR<input type="color" id="bagMain" value="#ff6fa5"></label><label>POCKET COLOR<input type="color" id="bagSecond" value="#855cff"></label></div><button class="publish" type="submit">CREATE BACKPACK · 🌙 4</button></form><div class="design-grid" id="myBackpacks"></div></div></div>
     </section>
 
-    <section class="creator-hub" id="creatorStudios"><div class="creator-hub-head"><p class="eyebrow">EVERY CREATOR TOOL IN ONE PLACE</p><h2>CREATOR<br>STUDIOS</h2><p>Make games, faces, hair, clothes, pants, sweaters, dresses, jackets, and backpacks.</p></div><div class="maker-hub-grid" id="makerHubGrid">
+    <section class="creator-hub" id="creatorStudios"><div class="creator-hub-head"><p class="eyebrow">EVERY CREATOR TOOL IN ONE PLACE</p><h2>CREATOR<br>STUDIOS</h2><p>Make games, faces, hair, clothes, pants, sweaters, dresses, jackets, shoes, and backpacks.</p></div><div class="maker-hub-grid" id="makerHubGrid">
       <div class="fashion-maker dress-maker"><div class="maker-heading"><div><p class="eyebrow">DRESS MAKER · 🌙 4</p><h3>MAKE A DRESS</h3></div><span>👗</span></div><form id="dressForm"><label>DRESS NAME<input id="dressName" maxlength="18" placeholder="Moonlight Dress" required></label><div class="maker-options"><label>MAIN COLOR<input type="color" id="dressMain" value="#ff78b5"></label><label>TRIM COLOR<input type="color" id="dressSecond" value="#8a62e8"></label><label>PATTERN<select id="dressPattern"><option value="split">Two Tone</option><option value="stripes">Sparkle Stripes</option><option value="checker">Diamond</option><option value="solid">Solid</option></select></label></div><button class="publish" type="submit">CREATE DRESS · 🌙 4</button></form><div class="design-grid" id="myDresses"></div></div>
       <div class="fashion-maker jacket-maker"><div class="maker-heading"><div><p class="eyebrow">JACKET DESIGNER · 🌙 4</p><h3>MAKE A JACKET</h3></div><span>🧥</span></div><form id="jacketForm"><label>JACKET NAME<input id="jacketName" maxlength="18" placeholder="Galaxy Jacket" required></label><div class="maker-options"><label>MAIN COLOR<input type="color" id="jacketMain" value="#315f94"></label><label>ZIP COLOR<input type="color" id="jacketSecond" value="#f3d068"></label><label>PATTERN<select id="jacketPattern"><option value="split">Two Tone</option><option value="stripes">Racing Stripes</option><option value="checker">Checker</option><option value="solid">Solid</option></select></label></div><button class="publish" type="submit">CREATE JACKET · 🌙 4</button></form><div class="design-grid" id="myJackets"></div></div>
+      <div class="fashion-maker shoe-maker"><div class="maker-heading"><div><p class="eyebrow">SHOE STUDIO · 🌙 3</p><h3>MAKE SHOES</h3></div><span>👟</span></div><form id="shoeForm"><label>SHOE NAME<input id="shoeName" maxlength="18" placeholder="Moon Sneakers" required></label><div class="maker-options"><label>MAIN COLOR<input type="color" id="shoeMain" value="#ffffff"></label><label>SOLE COLOR<input type="color" id="shoeSecond" value="#7558dd"></label><label>SHOE STYLE<select id="shoeStyle"><option value="sneakers">Sneakers</option><option value="boots">Boots</option><option value="heels">Heels</option><option value="slippers">Slippers</option></select></label></div><button class="publish" type="submit">CREATE SHOES · 🌙 3</button></form><div class="design-grid" id="myShoes"></div></div>
     </div></section>
     <section class="backpack-zone" id="backpack"><div class="backpack-head"><div><p class="eyebrow">YOUR INVENTORY</p><h2>BACKPACK</h2><p>Currency, collectibles, and everything you create lives here.</p></div><div class="bag-currency"><span>◆ <b id="bagCubes">0</b> POWER CUBES</span><span>⚡ <b id="bagPowerGems">0</b> / 200 POWER GEMS</span><span>🌙 <b id="bagGems">0</b> MOON GEMS</span></div></div><div class="capacity"><span>STORAGE <b id="bagCapacityText">0 / 12</b></span><div><i id="bagCapacityFill"></i></div></div><div class="inventory-grid" id="inventoryGrid"></div></section>
 
@@ -220,6 +225,6 @@
     </div>
   </div>
   <div class="toast" id="toast">CORE FRAGMENT ACQUIRED</div>
-  <script src="app.js"></script>
+  <script src="app.js?v=20260821-forever-run"></script>
 </body>
 </html>
